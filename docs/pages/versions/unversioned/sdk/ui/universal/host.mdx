@@ -50,6 +50,38 @@ export default function MatchContentsExample() {
 }
 ```
 
+### Forcing a color scheme
+
+Use `colorScheme` to override the appearance of descendant native views. Pass `'light'` or `'dark'` to force one, or omit it to follow the device setting. Android and iOS only &mdash; ignored on web.
+
+```tsx HostColorSchemeExample.tsx
+import { Host, Button } from '@expo/ui';
+
+export default function HostColorSchemeExample() {
+  return (
+    <Host colorScheme="dark" style={{ flex: 1 }}>
+      <Button label="Always dark" onPress={() => {}} />
+    </Host>
+  );
+}
+```
+
+### Layout direction
+
+Use `layoutDirection` to set the writing direction of the platform UI content. Defaults to the current locale direction from `I18nManager`. Android and iOS only &mdash; ignored on web.
+
+```tsx HostLayoutDirectionExample.tsx
+import { Host, Button } from '@expo/ui';
+
+export default function HostLayoutDirectionExample() {
+  return (
+    <Host layoutDirection="rightToLeft" style={{ flex: 1 }}>
+      <Button label="RTL" onPress={() => {}} />
+    </Host>
+  );
+}
+```
+
 ## API
 
 ```tsx
