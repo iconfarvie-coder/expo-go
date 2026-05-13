@@ -16,6 +16,9 @@
 
 - Added `@expo/ui/community/slider`, a drop-in replacement for `@react-native-community/slider`. ([#45623](https://github.com/expo/expo/pull/45623) by [@nishan](https://github.com/intergalacticspacehighway))
 - Make `ChartView` public. ([#45674](https://github.com/expo/expo/pull/45674) by [@jakex7](https://github.com/jakex7))
+- [universal] Added `Collapsible`, `List`, `ListItem`, and `Picker` components.
+- [universal] Added `snapPoints` prop on `BottomSheet` and `colorScheme` / `layoutDirection` props on `Host`.
+- [jetpack-compose] `background(color, { animationSpec })` accepts an optional `animationSpec` and wraps the color in `animateColorAsState` so changes between renders animate smoothly.
 
 ### 🐛 Bug fixes
 

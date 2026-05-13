@@ -1,18 +1,25 @@
-import { View, type ViewProps } from 'react-native';
+import { View } from 'react-native';
+
+import type { UniversalHostProps } from './types';
 
 /**
  * A bridging container that hosts SwiftUI views on iOS and Jetpack Compose views on Android.
+ * On platforms without a native UI-toolkit binding (web, RN fallback), renders a plain `View`.
+ * The `colorScheme`, `layoutDirection`, and `matchContents` props are accepted for API parity but have no effect.
  */
 export function Host({
   children,
   style,
+  matchContents: _matchContents,
+  colorScheme: _colorScheme,
+  layoutDirection: _layoutDirection,
   ...rest
-}: ViewProps & {
-  matchContents?: boolean | { vertical?: boolean; horizontal?: boolean };
-}) {
+}: UniversalHostProps) {
   return (
     <View style={style} {...rest}>
       {children}
     </View>
   );
 }
+
+export type { UniversalHostProps } from './types';
